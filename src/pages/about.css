@@ -1,0 +1,228 @@
+#about {
+    padding-top: 80px;
+}
+.tab-titles {
+    display: flex;
+    margin: 20px 0 40px;
+}
+.tab-links {
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.tab-links::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: cyan;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+    border-radius: 10px;
+}
+/* .tab-links:hover::after {
+    width: 100%;
+} */
+.tab-links.active-link::after {
+    width: 50%;
+}
+
+.tab-contents ul li {
+    list-style: none;
+    margin: 10px 0;
+}
+.tab-contents ul li span {
+    color:cyan;
+    font-size: 14px;
+}
+.tab-contents {
+    display: none;
+}
+.tab-contents.active-tab {
+    display: block;
+}
+
+.Scard {
+    width: 300px;
+    height: 230px;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: rgba(228, 227, 227, 0.758);
+    transition: background-color 0.5s, transform 0.5s;
+    margin-bottom: 20px;
+}
+#si{
+    font-size: 40px;
+}
+.Scard div {
+    margin: 20px;
+}
+.Pcard {
+    width: 300px;
+    height: 350px;
+    border-radius: 10px;
+    transition: background-color 0.5s, transform 0.5s;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.card-con {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#skname, #skdis{
+    cursor: default;
+}
+#skname {
+    font-size: 22px;
+    margin-top: 10px;
+}
+#skdis {
+    font-size: 15px;
+}
+#sl {
+    font-size: 12px;
+    cursor: pointer;
+}
+.Scard:hover {
+    background-color: rgb(110, 231, 225)!important;
+    transform: translateY(-10px);
+    color: black!important;
+}
+/* .Pcard:hover {
+
+} */
+.layer {
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(rgba(0,0,0,0.8),cyan);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: scale 0.5s, height 0.5s;
+    border-radius: 10px;
+    text-align: center;
+}
+.layer i {
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    padding-top: 11px;
+    color: black;
+}
+.layer i:hover {
+    transform: scale(1.1);
+
+}
+.Pcard img {
+    transition: transform 0.5s;
+}
+
+.Pcard:hover img{
+    transform: scale(1.1);
+}
+
+.Pcard:hover .layer {
+    height: 100%;
+}
+
+.contcon {
+    width: 400px;
+    height: 400px;
+}
+.contcon i {
+    width: 28px;
+    height: 25px;
+    text-align: center;
+    border-radius: 17px;
+    padding-top: 4px;
+    color: cyan;
+}
+.butdiv {
+    margin-top: 100px;
+}
+.but {
+    font-size: 24px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: cyan;
+    font-family: consolas;
+    box-shadow: 0px 0px 5px cyan,
+    0px 0px 2px cyan;
+    text-decoration: none;
+    color: black;
+}
+.but:hover {
+    box-shadow: 0px 0px 5px cyan,
+    0px 0px 25px cyan,
+    0px 0px 50px cyan,
+    0px 0px 100px cyan;
+}
+
+.but1 {
+    width: 100px;
+    height: 40px;
+    border: 2px solid cyan;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 16px;
+    margin-top: 20px;
+    
+    transition: all 0.5s ease;
+}
+.but1:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 0px 5px cyan,
+    0px 0px 25px cyan;
+}
+
+.Pcard .layer div {
+    margin-top: 80px;
+}
+.frm input {
+    display: block;
+    width: 500px;
+    height: 40px;
+    background-color: rgba(112, 111, 111, 0.739);
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+.frm input::placeholder {
+    color: rgb(160, 159, 159);
+    font-style: italic;
+    font-size: 14px;
+    opacity: 1;
+}
+
+.frm input:focus {
+    outline: none;
+}
+.frm {
+    margin-left: 40%;
+}
+#contact {
+    margin-top: 8%;
+}
+.title {
+    margin-bottom: 40px;
+}
+#projects {
+    margin-top: 8%;
+}
+#Services {
+    margin-top: 8%;
+}
