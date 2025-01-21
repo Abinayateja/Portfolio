@@ -5,23 +5,23 @@ import img1 from '../images/sleep-music-page.png';
 import img2 from '../images/movie-nemo-page-v1.png';
 import '../pages/about.css';
 function Projects() {
-  const projectList = [
-    { 
-      title: "Portfolio Website", 
-      description: "A responsive portfolio website built using React, showcasing my work and skills.", 
-      link: "https://example.com" 
-    },
-    { 
-      title: "Weather App", 
-      description: "A weather forecasting web app that fetches real-time weather data from a public API.", 
-      link: "https://example.com/weather-app" 
-    },
-    { 
-      title: "E-commerce Website", 
-      description: "An online store built with React, Redux, and Firebase for managing authentication and databases.", 
-      link: "https://example.com/ecommerce" 
-    },
-  ];
+  // const projectList = [
+  //   { 
+  //     title: "Portfolio Website", 
+  //     description: "A responsive portfolio website built using React, showcasing my work and skills.", 
+  //     link: "https://example.com" 
+  //   },
+  //   { 
+  //     title: "Weather App", 
+  //     description: "A weather forecasting web app that fetches real-time weather data from a public API.", 
+  //     link: "https://example.com/weather-app" 
+  //   },
+  //   { 
+  //     title: "E-commerce Website", 
+  //     description: "An online store built with React, Redux, and Firebase for managing authentication and databases.", 
+  //     link: "https://example.com/ecommerce" 
+  //   },
+  // ];
 
   return (
     <section id="projects">

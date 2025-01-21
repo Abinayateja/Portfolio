@@ -3,7 +3,7 @@ import React from "react";
 const ProjectCard = (props) => {
     return (
             <div className="Pcard col-12 col-md-6">
-                <img src={props.img}/>
+                <img src={props.img} alt=""/>
                 <div className="layer">
                     <div>
                         <h1>
@@ -12,7 +12,7 @@ const ProjectCard = (props) => {
                         <p>
                             {props.projdis}
                         </p>
-                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <button><i class="fa-solid fa-arrow-up-right-from-square"></i></button>
                     </div>
                 </div>
             </div>
