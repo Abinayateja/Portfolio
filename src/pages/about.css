@@ -200,6 +200,7 @@
     border: none;
     margin-bottom: 10px;
     font-size: 14px;
+    color: white;
 }
 .frm input::placeholder {
     color: rgb(160, 159, 159);
@@ -208,7 +209,7 @@
     opacity: 1;
 }
 
-.frm input:focus {
+.frm input:focus,#text-area:focus{
     outline: none;
 }
 .frm {
@@ -225,4 +226,36 @@
 }
 #Services {
     margin-top: 8%;
+}
+
+#text-area {
+    width: 500px;
+    background-color: rgba(112, 111, 111, 0.739);
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: white;
+}
+#text-area::placeholder {
+    color: rgb(160, 159, 159);
+    font-style: italic;
+    font-size: 14px;
+    opacity: 1;
+}
+.sub {
+    width: 140px;
+    height: 60px;
+    border: 2px solid cyan;
+    background-color: transparent;
+    border-radius: 10px;
+    color: white;
+    margin-top: 20px;
+    font-size: 16px;
+
+}
+.sub:hover {
+    box-shadow: 0px 0px 5px cyan,
+    0px 0px 25px cyan;
 }

@@ -12,7 +12,7 @@ const ProjectCard = (props) => {
                         <p>
                             {props.projdis}
                         </p>
-                        <button><i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                        <a><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                 </div>
             </div>
