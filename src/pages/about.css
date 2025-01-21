@@ -259,3 +259,10 @@
     box-shadow: 0px 0px 5px cyan,
     0px 0px 25px cyan;
 }
+
+.err {
+    background-color: transparent;
+    color: white;
+    border: none;
+
+}
