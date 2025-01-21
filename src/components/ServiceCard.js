@@ -20,7 +20,7 @@ const ServiceCard = (props) => {
                     <p id="skdis">
                         {props.dis}
                     </p>
-                    <a href='www.google.com' id='sl'>Learn more</a>
+                    <button id='sl'>Learn more</button>
                 </div>
             </div>
     );
