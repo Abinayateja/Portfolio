@@ -53,7 +53,6 @@ function App() {
       easing: 'ease-out',
       reset: true,
       origin: 'bottom',
-      distance: '50px',
     });
 
   }, []);
