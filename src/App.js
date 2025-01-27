@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -8,6 +8,7 @@ import Skills from "./pages/Skills";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import Services from "./pages/Services";
+import ScrollReveal from 'scrollreveal'; // Import ScrollReveal
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -23,6 +24,40 @@ function App() {
     minHeight: "100vh",
   };
 
+  useEffect(() => {
+    // Initialize ScrollReveal
+    ScrollReveal().reveal('.reveal', {
+      delay: 200,
+      distance: '50px',
+      duration: 1000,
+      easing: 'ease-in-out',
+      opacity: 0,
+      scale: 0.85,
+      reset: true,
+    });
+
+    ScrollReveal().reveal('.reveal-fade', {
+      delay: 300,
+      distance: '30px',
+      duration: 1000,
+      opacity: 0,
+      easing: 'ease-in-out',
+      reset: true,
+    });
+
+    ScrollReveal().reveal('.reveal-up', {
+      delay: 200,
+      distance: '30px',
+      duration: 1000,
+      opacity: 0,
+      easing: 'ease-out',
+      reset: true,
+      origin: 'bottom',
+      distance: '50px',
+    });
+
+  }, []);
+
   return (
     <Router>
       <div style={appStyles}>
@@ -34,11 +69,23 @@ function App() {
           <Route path="/skills" element={<Skills />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
-        <About/>
-        <Services isDarkMode={isDarkMode}/>
-        <Projects/>
-        {/* <Skills/> */}
-        <Contact/>
+        
+        <div className="reveal fade-in">
+          <About />
+        </div>
+
+        <div className="reveal-up">
+          <Services isDarkMode={isDarkMode} />
+        </div>
+
+        <div className="reveal-up">
+          <Projects />
+        </div>
+
+        <div className="reveal-up">
+          <Contact />
+        </div>
+
         <Footer />
       </div>
     </Router>

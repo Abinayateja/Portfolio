@@ -72,9 +72,14 @@
 .logo {
   color: white;
   margin: 0;
-  font-size: 30px;
+  font-size: 28px;
+  cursor: pointer;
   margin-top:-20px;
+  /* transition: scale 0.5s ease; */
 }
+/* .logo:hover {
+  scale: 1.02;
+} */
 .fir {
   color: cyan;
   font-size: 40px;

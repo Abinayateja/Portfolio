@@ -245,7 +245,7 @@
     opacity: 1;
 }
 .sub {
-    width: 140px;
+    width: 160px;
     height: 60px;
     border: 2px solid cyan;
     background-color: transparent;
@@ -253,6 +253,8 @@
     color: white;
     margin-top: 20px;
     font-size: 16px;
+    cursor: pointer;
+    position: relative;
 
 }
 .sub:hover {
@@ -266,3 +268,116 @@
     border: none;
 
 }
+.error-message {
+    color: #dc3545;
+    font-family: "Roboto";
+    font-size: 14px;
+}
+
+
+.sub:disabled {
+  cursor: not-allowed;
+}
+
+.loader {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 5px;
+
+  }
+  
+  .loader div {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: white;
+    animation: pulse 1.2s infinite ease-in-out;
+  }
+  
+  .loader div:nth-child(1) {
+    animation-delay: 0s;
+  }
+  
+  .loader div:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  
+  .loader div:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(0.5);
+      opacity: 0.3;
+    }
+    50% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.5);
+      opacity: 0.3;
+    }
+  }
+
+/* Error message styling */
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+
+/* scroll animations */
+
+/* Modal styles */
+.success-modal {
+    position: relative;
+    top: 20%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .modal-content p {
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+  
+  .modbut {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .modbut:hover {
+    background-color: #45a049;
+  }
+  
