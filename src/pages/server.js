@@ -9,7 +9,7 @@ const PORT = 5000;
 
 // Middleware
 app.use(cors({
-    origin: 'http://localhost:3000', // Allow only frontend to make requests
+    origin: 'https://anushatechportfolio.netlify.app/', // Allow only frontend to make requests
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type'],
 }));
