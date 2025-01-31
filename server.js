@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -6,6 +7,8 @@ const cors = require('cors');
 // Initialize app
 const app = express();
 const PORT = 5000;
+const mongoURI = process.env.MONGO_URI;
+
 
 // Middleware
 app.use(cors({
@@ -16,7 +19,6 @@ app.use(cors({
 app.use(bodyParser.json());
 
 // MongoDB connection
-const mongoURI = 'mongodb+srv://gaddamabinayateja:Abinay%401974@mycluster.d1vdt.mongodb.net/portfolioDB'; // ✅ Fixed encoding & added DB name
 
 mongoose.connect(mongoURI, {
   useNewUrlParser: true,
