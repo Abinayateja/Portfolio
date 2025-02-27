@@ -69,7 +69,7 @@ function Contact() {
     }
     
     try {
-      const response = await axios.post("http://localhost:5000/api/contact", formData);
+      const response = await axios.post("http://portfolio-5pvt.onrender.com/api/contact", formData);
       console.log(response.data.message); // Display success message
 
       // Simulate loading state with a delay before opening the modal
