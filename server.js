@@ -12,7 +12,7 @@ const mongoURI = process.env.MONGO_URI;
 
 // Middleware
 app.use(cors({
-  origin: ['https://anushatechportfolio.netlify.app', 'http://localhost:3000'], // Allow frontend & local dev
+  origin: ['https://anushatechportfolio.netlify.app', 'http://localhost:3000','https://portfolio-5pvt.onrender.com'], // Allow frontend & local dev
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type'],
 }));
