@@ -9,8 +9,10 @@ function Home() {
             <p>FrontEnd Developer</p>
             <h1>Hi, I'm <span id="name">Anusha</span><br/>valluri from India</h1>
           </div>
-          <div className="col-12 col-md-6 col-lg-6">
-            <img src={image} alt="" className="pic1"/>
+          <div className="col-12 col-md-6 col-lg-6 profile-con">
+            <div className="profile">
+              
+            </div>
           </div>
         </div>
       </div>
