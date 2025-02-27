@@ -7,7 +7,7 @@ const cors = require('cors');
 // Initialize app
 const app = express();
 const PORT = 5000;
-const mongoURI = process.env.MONGO_URI;
+const mongoURI = process.env.MONGO_URI || "mongodb+srv://gaddamabinayateja:Abinay%401974@mycluster.d1vdt.mongodb.net/portfolioDB";
 
 
 // Middleware
