@@ -20,10 +20,8 @@ app.use(bodyParser.json());
 
 // MongoDB connection
 
-mongoose.connect(mongoURI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-}).then(() => {
+mongoose.connect(mongoURI)
+  .then(() => {
   console.log('✅ Connected to MongoDB');
 }).catch(err => console.error('❌ Error connecting to MongoDB:', err));
 
