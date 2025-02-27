@@ -1,6 +1,5 @@
 import React from "react";
 import './home.css';
-import image from '../images/images.png';
 function Home() {
   return (
       <div className="con-1 container" id="home">
