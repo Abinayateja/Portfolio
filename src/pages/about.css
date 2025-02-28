@@ -51,7 +51,7 @@
     border-radius: 20px;
     padding: 20px;
     background-color: rgba(228, 227, 227, 0.758);
-    transition: background-color 0.5s, transform 0.5s;
+    transition: all 0.5s ease-in-out;
     margin-bottom: 20px;
 }
 #si{
@@ -59,14 +59,6 @@
 }
 .Scard div {
     margin: 20px;
-}
-.Pcard {
-    width: 350px;
-    height: 250px;
-    border-radius: 10px;
-    transition: background-color 0.5s, transform 0.5s;
-    margin-bottom: 20px;
-    border: 1px solid violet;
 }
 
 .card-con {
@@ -90,9 +82,10 @@
     cursor: pointer;
 }
 .Scard:hover {
-    background-color: rgb(110, 231, 225)!important;
-    transform: translateY(-10px);
-    color: black!important;
+    /* background-color: rgb(110, 231, 225)!important; */
+    border: 2px solid cyan!important;
+    /* transform: translateY(-8px); */
+    /* color: black!important; */
 }
 /* .Pcard:hover {
 
@@ -120,17 +113,7 @@
     transform: scale(1.1);
 
 }
-.Pcard img {
-    transition: transform 0.5s;
-}
 
-.Pcard:hover img{
-    transform: scale(1.1);
-}
-
-.Pcard:hover .layer {
-    height: 100%;
-}
 
 .contcon {
     width: 400px;
@@ -183,9 +166,7 @@
     0px 0px 25px cyan;
 }
 
-.Pcard .layer div {
-    margin-top: 80px;
-}
+
 .frm input {
     display: block;
     width: 500px;
@@ -379,11 +360,51 @@
   #about {
     margin-bottom: 230px;
   }
+  #Services {
+    margin-bottom: 230px;
+  }
   #projects {
     margin-top: 80px;
     padding-top: 80px;
   }
-#aboutcon {
+  .card-text {
+    opacity: 0;
+  }
+  .Pcard {
+    width: 350px;
+    height: 250px;
+    border-radius: 10px;
+    transition: all 2s ease;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+
+    
+}
+.Pcard:hover {
+    border: 1px solid violet;
+}
+.pro-con {
+    width: 400px;
+    height: 100%;
+    margin-left: -20px;
+}
+ .Pcard:hover .pro-con{
+    
+    background-color: rgba(0, 0, 0, 0.5);
+    
+ }
+ .Pcard:hover .card-text {
+    opacity: 1;
+    margin-top: 20%;
+    margin-left: 15%;
+
+ }
+  
+  
+  #aboutcon {
     border: 3px solid cyan;
     width: 320px;
     height: 320px;
@@ -394,7 +415,7 @@
   }
   #abtimg {
     background-image: url('../images/profilepic.jpeg');
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     border-radius: 30px;
     width: 300px;
@@ -402,4 +423,6 @@
     position: absolute;
     top: 8px;
     left: 8px;
+    
 }
+  
