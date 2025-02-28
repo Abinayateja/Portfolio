@@ -31,6 +31,9 @@ function Projects() {
           <ProjectCard img = {image} projtitle = "Food Munch App" projdis = "lklksjlskjlksjljslkjlaskjlkjdlkj"/>
           <ProjectCard img = {img1} projtitle = "Food Munch App" projdis = "lklksjlskjlksjljslkjlaskjlkjdlkj"/>
           <ProjectCard img = {img2} projtitle = "Food Munch App" projdis = "lklksjlskjlksjljslkjlaskjlkjdlkj"/>
+          <ProjectCard img = {img1} projtitle = "Food Munch App" projdis = "lklksjlskjlksjljslkjlaskjlkjdlkj"/>
+          <ProjectCard img = {img2} projtitle = "Food Munch App" projdis = "lklksjlskjlksjljslkjlaskjlkjdlkj"/>
+          <ProjectCard img = {img2} projtitle = "Food Munch App" projdis = "lklksjlskjlksjljslkjlaskjlkjdlkj"/>
         </div>
         <div className="text-center">
           <button className="but1">See more</button>
