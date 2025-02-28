@@ -380,4 +380,6 @@
   .modbut:hover {
     background-color: #45a049;
   }
-  
+  #about {
+    margin-bottom: 230px;
+  }
