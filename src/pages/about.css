@@ -82,10 +82,9 @@
     cursor: pointer;
 }
 .Scard:hover {
-    /* background-color: rgb(110, 231, 225)!important; */
-    border: 2px solid cyan!important;
-    /* transform: translateY(-8px); */
-    /* color: black!important; */
+    background-color: rgb(110, 231, 225)!important;
+    transform: translateY(-10px);
+    color: black!important;
 }
 /* .Pcard:hover {
 
