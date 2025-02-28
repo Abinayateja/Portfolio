@@ -21,7 +21,7 @@ function Projects() {
           <ProjectCard img = {img5} projtitle = "Spotify Redesign" projdis = "A Figma-based UI revamp of Spotify, focusing on a fresh, modern, and user-centric layout."/>
           <ProjectCard img = {img6} projtitle = "Gen AI Voice Bot" projdis = "An AI-powered voice assistant that interacts with users using natural language processing."/>
         </div>
-        <div className="see-more-con">
+        <div className="see-more-con text-center">
           <button className="but1">See more</button>
         </div>
       </div>
