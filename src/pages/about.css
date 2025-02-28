@@ -380,6 +380,7 @@
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
+    cursor:pointer;
 
     
 }
