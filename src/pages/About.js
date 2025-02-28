@@ -23,7 +23,7 @@ function About() {
     <div id="about">
       <div className="container">
         <div className="row">
-          <div className="col-12 col-md-8 col-lg-6" id="aboutcon">
+          <div className="col-12 col-md-8 col-lg-8" id="aboutcon">
             <div  id="abtimg">
               
             </div>
