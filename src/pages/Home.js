@@ -3,7 +3,7 @@ import './home.css';
 function Home() {
   return (
       <div className="con-1 container" id="home">
-        <div className="row">
+        <div className="row home-con">
           <div className="header-text col-12 col-md-6 col-lg-6">
             <p>FrontEnd Developer</p>
             <h1>Hi, I'm <span id="name">Anusha</span><br/>valluri from India</h1>
