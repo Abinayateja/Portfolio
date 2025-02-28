@@ -22,7 +22,7 @@ function About() {
   return (
     <div id="about">
       <div className="container">
-        <div className="row">
+        <div className="row justify-content-between">
           <div className="col-12 col-md-6 col-lg-6" id="aboutcon">
             <div  id="abtimg">
               
