@@ -1,6 +1,5 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
-import image from '../images/book-store-v1.png';
 import img1 from '../images/ecomm.png';
 import img2 from '../images/food.jpg';
 import img3 from '../images/instagram.jpg';
