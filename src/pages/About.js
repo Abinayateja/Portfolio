@@ -22,13 +22,13 @@ function About() {
   return (
     <div id="about">
       <div className="container">
-        <div className="row justify-content-between">
-          <div className="col-12 col-md-6 col-lg-6" id="aboutcon">
+        <div className="row">
+          <div className="col-12 col-md-8 col-lg-6" id="aboutcon">
             <div  id="abtimg">
               
             </div>
           </div>
-          <div className="col-12 col-md-6">
+          <div className="col-12 col-md-4">
             <h1>About</h1>
             <p className="obj">
               A Passionate and Hardworking, Highly Motivated student pursuing Computer Science. I am very much interested to learn new technologies and improving problem-solving and communication skills day by day. Currently, I am learning Full Stack Development, SQL, Python programming.
