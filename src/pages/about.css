@@ -383,3 +383,23 @@
     margin-top: 80px;
     padding-top: 80px;
   }
+#aboutcon {
+    border: 3px solid cyan;
+    width: 320px;
+    height: 320px;
+    border-radius: 50px;
+    position: relative;
+    padding: 10px;
+    margin-top: 40px;
+  }
+  #abtimg {
+    background-image: url('../images/profilepic.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50px;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
