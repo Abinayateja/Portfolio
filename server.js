@@ -9,13 +9,11 @@ const PORT = process.env.PORT || 5000;
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Middleware
-app.use(
-  cors({
-    origin: ["https://anushatechportfolio.netlify.app", "http://localhost:3000"],
-    methods: ["POST", "GET"], // ✅ Allow GET requests
-    allowedHeaders: ["Content-Type"],
-  })
-);
+app.use(cors({
+  origin: '*', // Allow all origins (for testing)
+  methods: ['POST'],
+  allowedHeaders: ['Content-Type'],
+}));
 app.use(bodyParser.json());
 
 // ✅ Add a root route to prevent "Cannot GET /" error
