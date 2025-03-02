@@ -1,57 +1,43 @@
 require('dotenv').config();
 const express = require('express');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
 const cors = require('cors');
+const bodyParser = require('body-parser');
+const { Resend } = require('resend');
 
-// Initialize app
 const app = express();
-const PORT = 5000;
-const mongoURI = process.env.MONGO_URI || "mongodb+srv://gaddamabinayateja:Abinay%401974@mycluster.d1vdt.mongodb.net/portfolioDB";
-
+const PORT = process.env.PORT || 5000;
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Middleware
 app.use(cors({
-  origin: ['https://anushatechportfolio.netlify.app', 'http://localhost:3000','https://portfolio-5pvt.onrender.com'], // Allow frontend & local dev
-  methods: ['GET', 'POST'],
+  origin: ['https://anushatechportfolio.netlify.app', 'http://localhost:3000'],
+  methods: ['POST'],
   allowedHeaders: ['Content-Type'],
 }));
 app.use(bodyParser.json());
 
-// MongoDB connection
-
-mongoose.connect(mongoURI)
-  .then(() => {
-  console.log('✅ Connected to MongoDB');
-}).catch(err => console.error('❌ Error connecting to MongoDB:', err));
-
-// Create Mongoose Schema and Model
-const contactSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  email: { type: String, required: true },
-  message: { type: String, required: true },
-  submittedAt: { type: Date, default: Date.now }
-});
-const Contact = mongoose.model('Contact', contactSchema);
-
-// API Route to handle form submission
+// API Route to Handle Contact Form Submission
 app.post('/api/contact', async (req, res) => {
-  try {
-    const newContact = new Contact(req.body);
-    await newContact.save();
-    res.status(201).json({ message: '✅ Contact saved successfully' });
-  } catch (error) {
-    console.error('❌ Error:', error);
-    res.status(500).json({ error: 'Failed to save contact' });
-  }
-});
+  const { name, email, message } = req.body;
 
-// Test Route for Root URL
-app.get("/", (req, res) => {
-    res.send("🚀 Server is running and connected to MongoDB!");
+  try {
+    const response = await resend.emails.send({
+      from: 'Your Portfolio <your@email.com>',
+      to: 'yourpersonalemail@example.com', // Replace with your email
+      subject: `New Message from ${name}`,
+      html: `<p><strong>Name:</strong> ${name}</p>
+             <p><strong>Email:</strong> ${email}</p>
+             <p><strong>Message:</strong> ${message}</p>`,
+    });
+
+    res.status(200).json({ message: '✅ Email sent successfully!', response });
+  } catch (error) {
+    console.error('❌ Email sending failed:', error);
+    res.status(500).json({ error: 'Failed to send email' });
+  }
 });
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`🚀 Server is running on http://localhost:${PORT}`);
+  console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
