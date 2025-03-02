@@ -23,7 +23,7 @@ app.post('/api/contact', async (req, res) => {
   try {
     const response = await resend.emails.send({
       from: 'Your Portfolio <your@email.com>',
-      to: 'yourpersonalemail@example.com', // Replace with your email
+      to: 'gaddamabinayateja@example.com', // Replace with your email
       subject: `New Message from ${name}`,
       html: `<p><strong>Name:</strong> ${name}</p>
              <p><strong>Email:</strong> ${email}</p>
