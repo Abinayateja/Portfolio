@@ -45,7 +45,7 @@ function Contact() {
     setIsLoading(true);
 
     try {
-      const response = await axios.post("https://your-deployed-server-url.com/api/contact", formData);
+      const response = await axios.post("https://portfolio-5pvt.onrender.com/api/contact", formData);
       console.log(response.data.message);
 
       setTimeout(() => {
