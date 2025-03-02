@@ -27,22 +27,28 @@ app.get("/", (req, res) => {
 app.post("/api/contact", async (req, res) => {
   const { name, email, message } = req.body;
 
+  if (!name || !email || !message) {
+    return res.status(400).json({ error: "❌ All fields are required!" });
+  }
+
   try {
     const response = await resend.emails.send({
       from: "Your Portfolio <your@email.com>",
-      to: "gaddamabinayateja@example.com", // Replace with your email
+      to: "gaddamabinayateja@example.com", // Replace with your actual email
       subject: `New Message from ${name}`,
       html: `<p><strong>Name:</strong> ${name}</p>
              <p><strong>Email:</strong> ${email}</p>
              <p><strong>Message:</strong> ${message}</p>`,
     });
 
-    res.status(200).json({ message: "✅ Email sent successfully!", response });
+    console.log("✅ Email sent:", response);
+    res.status(200).json({ message: "✅ Email sent successfully!" });
   } catch (error) {
     console.error("❌ Email sending failed:", error);
-    res.status(500).json({ error: "Failed to send email" });
+    res.status(500).json({ error: "Failed to send email", details: error.message });
   }
 });
+
 
 // Start server
 app.listen(PORT, () => {
