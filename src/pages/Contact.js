@@ -5,100 +5,68 @@ import "../pages/about.css";
 import pdffile from "../images/Anusha.pdf";
 
 function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [errors, setErrors] = useState({ name: "", email: "", message: "" });
   const [successModalIsOpen, setSuccessModalIsOpen] = useState(false);
-  const [errors, setErrors] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
   const [isLoading, setIsLoading] = useState(false);
-  
-  // Regular expression for basic email validation
+
+  // ✅ Email Validation Regex
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-  // Handle input change
+  // ✅ Handle Input Changes
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((prev) => ({ ...prev, [name]: value }));
+
+    // ✅ Clear error message while typing
+    setErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
-  // Validate fields on blur
+  // ✅ Validate Inputs on Blur
   const handleBlur = (event) => {
     const { name, value } = event.target;
-    if (value.trim() === "") {
-      setErrors({ ...errors, [name]: "Required*" });
-    } else {
-      setErrors({ ...errors, [name]: "" });
+
+    if (name === "name" && value.trim() === "") {
+      setErrors((prev) => ({ ...prev, name: "Name is required." }));
     }
-    if (name === "email" && value && !emailRegex.test(value)) {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        email: "Please enter a valid email address.",
-      }));
+
+    if (name === "email" && !emailRegex.test(value)) {
+      setErrors((prev) => ({ ...prev, email: "Invalid email format." }));
+    }
+
+    if (name === "message" && value.trim() === "") {
+      setErrors((prev) => ({ ...prev, message: "Message cannot be empty." }));
     }
   };
 
-  // Handle form submission
+  // ✅ Handle Form Submission
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setIsLoading(true); // Show loading spinner
-    
-    // Basic validation
-    if (!formData.name || !formData.email || !formData.message) {
-      setErrors({
-        name: formData.name ? "" : "Name is required",
-        email: formData.email ? "" : "Email is required",
-        message: formData.message ? "" : "Message is required",
-      });
-      setIsLoading(false); // Hide loading spinner
-      return;
-    }
+    setIsLoading(true);
 
-    if (!emailRegex.test(formData.email)) {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        email: "Please enter a valid email address.",
-      }));
-      setIsLoading(false); // Hide loading spinner
-      return;
-    }
-    
     try {
-      const response = await axios.post("http://portfolio-5pvt.onrender.com/api/contact", formData);
-      console.log(response.data.message); // Display success message
+      const response = await axios.post("https://your-deployed-server-url.com/api/contact", formData);
+      console.log(response.data.message);
 
-      // Simulate loading state with a delay before opening the modal
       setTimeout(() => {
-        setIsLoading(false); // Stop loading spinner
-        setSuccessModalIsOpen(true); // Open the success modal after delay
-      }, 2000); // Delay of 2 seconds (adjust as needed)
-      
-      setFormData({ name: "", email: "", message: "" }); // Clear form
+        setIsLoading(false);
+        setSuccessModalIsOpen(true);
+      }, 1500);
+
+      setFormData({ name: "", email: "", message: "" });
     } catch (error) {
-      setIsLoading(false); // Hide loading spinner
+      setIsLoading(false);
       console.error("Error submitting the form:", error);
-      alert("Failed to submit the form. Please try again.");
+      alert("Failed to send the message. Please try again.");
     }
   };
-
-  // Close modal handler
-  const closeModal = () => {
-    setSuccessModalIsOpen(false); // Close the success modal
-  };
-
-  // Enable submit button only when form is valid
-  const isFormValid = formData.name && formData.email && formData.message && emailRegex.test(formData.email);
 
   return (
     <section id="contact">
       <div className="container">
         <h1 className="title">Contact Me</h1>
-        <div className="row">
+        <div className="row contact-con">
+          {/* Left Contact Info */}
           <div className="contcon col-12 col-md-6">
             <div className="contact-item">
               <i className="fa-solid fa-phone"></i>
@@ -108,20 +76,20 @@ function Contact() {
               <i className="fa-regular fa-envelope"></i>
               <span>example@example.com</span>
             </div>
-
             <div className="butdiv">
               <a className="but" href={pdffile} download>
                 Download CV
               </a>
             </div>
           </div>
+
+          {/* Right Contact Form */}
           <div className="col-12 col-md-6">
             <form className="frm" onSubmit={handleSubmit}>
               <input
                 type="text"
                 name="name"
                 placeholder="Your Name"
-                id="name"
                 value={formData.name}
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -132,7 +100,6 @@ function Contact() {
                 type="email"
                 name="email"
                 placeholder="Your Email"
-                id="email"
                 value={formData.email}
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -142,13 +109,13 @@ function Contact() {
               <textarea
                 name="message"
                 placeholder="Your Message"
-                id="text-area"
                 value={formData.message}
                 onChange={handleChange}
+                onBlur={handleBlur}
               ></textarea>
               <p className="error-message">{errors.message}</p>
-              
-              <button type="submit" className="sub" disabled={!isFormValid || isLoading}>
+
+              <button type="submit" className="sub" disabled={!formData.name || !formData.email || !formData.message || !emailRegex.test(formData.email) || isLoading}>
                 {isLoading ? (
                   <>
                     Submitting...
@@ -170,7 +137,7 @@ function Contact() {
       {/* Success Modal */}
       <Modal
         isOpen={successModalIsOpen}
-        onRequestClose={closeModal}
+        onRequestClose={() => setSuccessModalIsOpen(false)}
         contentLabel="Success Message"
         className="success-modal"
         overlayClassName="modal-overlay"
@@ -178,7 +145,7 @@ function Contact() {
         <div className="modal-content">
           <h2>Success!</h2>
           <p>Your message has been successfully submitted.</p>
-          <button className="modbut" onClick={closeModal}>Close</button>
+          <button className="modbut" onClick={() => setSuccessModalIsOpen(false)}>Close</button>
         </div>
       </Modal>
     </section>
